@@ -42,6 +42,10 @@ class mainScene {
 
       // Set arrows as input method
       this.arrow = this.input.keyboard.createCursorKeys();
+
+      var pointer = scene.input.activePointer;
+
+
     }
     update() {
       // This method is called 60 times per second after create() 
@@ -53,7 +57,6 @@ class mainScene {
       } else if (this.arrow.left.isDown){
           this.player.x -= 3;
       }
-
       // y axis movement
       if (this.arrow.up.isDown){
           this.player.y -= 3;
@@ -61,6 +64,12 @@ class mainScene {
           this.player.y += 3;
       }
 
+      if(pointer.y > this.player.y){
+        this.player.y -=3;
+      } else if (pointer.y < this.player.y){
+        this.player.y +=3;
+      }
+       
 
       
 
