@@ -43,9 +43,6 @@ class mainScene {
       // Set arrows as input method
       this.arrow = this.input.keyboard.createCursorKeys();
 
-      var pointer = scene.input.activePointer;
-
-
     }
     update() {
       // This method is called 60 times per second after create() 
@@ -63,16 +60,6 @@ class mainScene {
       } else if ( this.arrow.down.isDown){
           this.player.y += 3;
       }
-
-      if(pointer.y > this.player.y){
-        this.player.y -=3;
-      } else if (pointer.y < this.player.y){
-        this.player.y +=3;
-      }
-       
-
-      
-
       if(this.physics.overlap(this.player, this.coin)){
           this.hit();
       }
